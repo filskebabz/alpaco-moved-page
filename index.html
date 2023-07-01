@@ -42,11 +42,21 @@
     </style>
 </head>
 <body>
+    <script>
+        window.onload = function() {
+          const url = window.location.href;
+          const root = window.location.origin; // or replace with the root URL if not in a browser context
+          const path = url.substring(url.indexOf(root) + root.length);
+          
+          const button = document.getElementById("go-btn");
+          button.href = "https://app.better.email" + path;
+        };
+      </script>
     <div class="content">
-        <img src="better_logo.svg" alt="Logo">
+        <img src="/better_logo.svg" alt="Logo">
         <h1>The Alpaco platform is now Better Email</h1>
         <p>The platform has changed name, and is now available at app.better.email. Everything else remains the same.</p>
-        <a href="https://app.better.email">Go to platform</a>
+        <a id="go-btn" href="https://app.better.email">Go to platform</a>
     </div>
 </body>
 </html>
